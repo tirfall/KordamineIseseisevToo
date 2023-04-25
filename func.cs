@@ -39,6 +39,14 @@ namespace KordamineIseseisevToo
             string answer = ("Positiivsed: " + positiv + "\nNegatiivsed: " + negativ + "\nNullid koordid: " + nullid);
             return answer;
         }
-        
+        public static string Sumbol(string answer)
+        {
+            char[] sortchars = answer.ToCharArray();
+            Array.Sort(sortchars);
+            char[] revchar = new char[sortchars.Length];
+            for (int i = 0; i < sortchars.Length; i++) { revchar[i] = sortchars[sortchars.Length - i - 1];}
+            string fin_ans = new string (revchar);
+            return fin_ans;
+        }
     }
 }
